@@ -413,6 +413,21 @@
 		</div>
 	</div>-->
 
+		<div id="dana-info" style="text-align:center; margin-top:30px; font-family:'Didact Gothic', sans-serif;">
+			<h3 style="margin-bottom:10px; color:#6b4f4f;">Donasi / Hadiah Pernikahan</h3>
+			<p style="margin-bottom:20px; color:#8c6f6f;">Via DANA</p>
+
+			<div style="display:inline-flex; align-items:center; gap:10px; background:#fff0f0; padding:10px 20px; border-radius:12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+				<span style="font-size:18px; font-weight:bold;" id="dana-number">087813174448</span>
+				<button onclick="copyDANA()" 
+					style="padding:6px 18px; border:none; background-color:#ff5a5f; color:white; border-radius:8px; cursor:pointer; transition:0.3s;">
+					Salin
+				</button>
+			</div>
+
+			<p style="margin-top:10px; color:#a77f7f;">Atas Nama: Siska & Wahyu</p>
+		</div>
+		
 	<footer id="fh5co-footer" role="contentinfo" style="background: url('images/background/repeat-background/witewall_3.png'); background-repeat:repeat ">
 		<div class="container">
 			<img class="flower-1" style="position: absolute; right: 0; bottom: 0" src="images/background/flowers/bottom-right-1.svg">
@@ -674,6 +689,22 @@ $('#open-invitation').click(function () {
 	inlineGallery.openGallery();
 </script>
 
+<script>
+		function copyDANA() {
+			const copyText = document.getElementById("dana-number").textContent;
+			navigator.clipboard.writeText(copyText).then(() => {
+				const btn = event.currentTarget;
+				const original = btn.textContent;
+				btn.textContent = "Tersalin!";
+				btn.style.backgroundColor = "#4CAF50"; // hijau sukses
+				setTimeout(() => {
+					btn.textContent = original;
+					btn.style.backgroundColor = "#ff5a5f";
+				}, 2000);
+			});
+		}
+</script>
+	
 </body>
 </html>
 
